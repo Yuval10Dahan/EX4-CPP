@@ -1,0 +1,3 @@
+/home/yuval/Documents/EX4-TESTS/sources/Ninja.hpp:34:15: error: parameter 'name' is const-qualified in the function declaration; const-qualification of parameters only has an effect in function definitions [readability-avoid-const-params-in-decls,-warnings-as-errors]
+        Ninja(const std::string name, const Point &location);
+              ^~~~~~
