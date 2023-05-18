@@ -2,8 +2,6 @@
 #include <iostream>
 
 
-// using namespace std;
-
 namespace ariel{}
 
 
@@ -30,7 +28,11 @@ class Point
         void setY(double yCoordinate);
 
         // other methods                           
-        double distance(Point &point) const;
+        double distance(const Point &point) const;
         void print() const;
         Point moveTowards(Point &sourceP, Point &destP, double distance);
+        std::string printStr();
+
+        // operator "=="
+        bool operator==(const Point &other) const;
 };

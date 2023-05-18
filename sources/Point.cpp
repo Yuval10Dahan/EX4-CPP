@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 #include "Point.hpp"
 
 
@@ -41,17 +42,51 @@ void Point::setY(double yCoordinate)
     this->yCoordinate_ = yCoordinate;
 }
 
-double Point::distance(Point &point) const
+// this method calculates the distance between two points
+double Point::distance(const Point &point) const
 {
-    return 1.0;
+    double x1 = this->xCoordinate_;
+    double x2 = point.getX();
+    double y1 = this->yCoordinate_;
+    double y2 = point.gety();
+
+    // pow
+    double diff1 = pow( (x1 - x2), 2 );
+    double diff2 = pow( (y1 - y2), 2 );
+
+    // sqrt
+    double distance = sqrt(diff1 + diff2);
+
+    return distance;
 }
 
+// this method prints the point object as (x,y)
 void Point::print() const
 {
-
+    cout << "(" << this->xCoordinate_ << "," << this->yCoordinate_ << ")" << endl;
 }
 
 Point Point::moveTowards(Point &sourceP, Point &destP, double distance)
 {
     return Point();
+}
+
+// this method print the point as a string
+string Point::printStr()
+{
+    string print = "(" + to_string(this->xCoordinate_) + "," + to_string(this->yCoordinate_) + ")";
+
+    return print;
+}
+
+// operator "=="
+bool Point::operator==(const Point &other) const
+{   
+    double x1 = this->xCoordinate_;
+    double x2 = other.getX();
+    double y1 = this->yCoordinate_;
+    double y2 = other.gety();
+
+    // if the x and the y of both the points is equal return true
+    return ( ( x1 == x2 ) && ( y1 == y2 ) );
 }

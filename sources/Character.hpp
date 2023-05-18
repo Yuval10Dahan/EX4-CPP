@@ -2,9 +2,6 @@
 #include <iostream>
 #include "Point.hpp"
 
-
-// using namespace std;
-
 namespace ariel{}
  
  
@@ -39,9 +36,12 @@ class Character
         // distructor - virtual
         virtual ~Character() = default;
 
-        // other methods - pure virtuals
+        // virtual methods
         virtual bool isAlive() const;
         virtual double distance(Character *other) const;
         virtual void hit(int number);
         virtual std::string print() const = 0;
+
+        // other methods
+        
 };
