@@ -15,5 +15,5 @@ Team2::~Team2()
 
 void Team2::print() const
 {
-
+    
 }

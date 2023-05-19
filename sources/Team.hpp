@@ -13,31 +13,29 @@
 
 // using namespace std;
  
-// #define TEN 10
 
 namespace ariel{}
 
 
-typedef struct fighter
-{
+// typedef struct fighter
+// {
 
-}fighter;
+// }fighter;
 
-
+ 
 
 
 class Team
 {
     private:
 
-        std::vector<fighter> ninjas_;
-        std::vector<fighter> cowboys_;
+        std::vector<Character*> warriors_;
         Character *leader_;
 
     protected:
 
-        const std::vector<fighter>& getNinjas() const;
-        const std::vector<fighter>& getCowboys() const;
+        const std::vector<Character*>& getWarriors() const;
+        const std::vector<Point>& getPointsArray() const;
         Character* getLeader() const;
 
     public:
@@ -58,6 +56,6 @@ class Team
         int stillAlive() const;
         virtual void print() const;
 
-        void addCowboy(Cowboy *cowboy);
-        void addNinja(Ninja *ninja);
+        void removeWarrior(size_t index);
+
 };

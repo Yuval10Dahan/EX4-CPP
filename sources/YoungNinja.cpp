@@ -21,8 +21,3 @@ YoungNinja::~YoungNinja ()
 {
 
 }
-
-string YoungNinja::print() const
-{
-    return "";
-}

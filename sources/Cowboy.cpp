@@ -5,13 +5,18 @@
  
 using namespace std;
 
-#define SIX 6
+#define BULLET_AMOUNT 6
 #define C_LIVES 110
+#define C_HIT 10
 
 
 
 // constructor
-Cowboy::Cowboy(const string &name, const Point &location) : Character(name, location), bulletAmount_(SIX), livePoints_(C_LIVES) {}
+Cowboy::Cowboy(const string &name, const Point &location) : Character(name, location),
+ bulletAmount_(BULLET_AMOUNT), livePoints_(C_LIVES) 
+{
+    setCharacterType('C');
+}
 
 // distructor
 Cowboy::~Cowboy()
@@ -33,40 +38,32 @@ int Cowboy::getLivePoints() const
     return this->getLivePoints();
 }
 
-string Cowboy::print() const
-{
-    string cowboyPrint = "";
-    string name = this->getName();
-    int livePoints = this->getLivePoints();
-
-    // if the cowboy is alive print all
-    if(this->isAlive())
-    {
-        cowboyPrint = "Name: (C) " + name + "\n" + "Live points: " + to_string(livePoints) + "\n" +
-        "Location: " + this->getLocation().printStr() + "\n";
-    }
-
-    // if the cobowy id dead, remove the "livePoints"
-    else
-    {
-        cowboyPrint = "Name: (C) (" + name + ") " + "\n" + "Location: " + this->getLocation().printStr() + "\n";
-    }
-    
-    return cowboyPrint;
-}
-
+// this method shoot the enemy
 void Cowboy::shoot(Character *enemy)
-{
-    
+{   
+    // if the cowboy is alive and has bullets - shoot the enemy
+    if(this->isAlive() && this->bulletAmount_ > 0)
+    {
+        // reduce 10 livePoints from the enemy
+        enemy->hit(C_HIT);
+
+        // reduce cowboy bullet amount by 1
+        this->bulletAmount_ --;
+    }
 }
 
+// this method check if the cowboy has bullets left
 bool Cowboy::hasBullets() const
 {
-    return false;
+    return (this->bulletAmount_ > 0);
 }
 
-
+// this function loads the cowboy's gun with six new bullets
 void Cowboy::reload()
 {
-
+    // only if the cowboy is alive, load the gun
+    if(this->isAlive())
+    {
+        this->bulletAmount_ = BULLET_AMOUNT;
+    }
 }

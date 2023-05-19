@@ -21,8 +21,3 @@ OldNinja::~OldNinja ()
 {
 
 }
-
-string OldNinja::print() const
-{
-    return "";
-}

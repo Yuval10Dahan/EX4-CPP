@@ -47,9 +47,6 @@ class Ninja : public Character
         int getPLivePoints() const;
         int getPSpeed() const;
         
-        // override methods
-        std::string print() const override;
-        
         // other methods
         void move(Character *enemy);
         void slash(Character *enemy);

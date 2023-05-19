@@ -21,8 +21,3 @@ TrainedNinja::~TrainedNinja ()
 {
 
 }
-
-string TrainedNinja::print() const
-{
-    return "";
-}

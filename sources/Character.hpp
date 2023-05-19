@@ -12,6 +12,8 @@ class Character
         std::string name_;
         Point location_;
         int livePoints_;
+        char characterType_;
+        bool isInAGroup_ = false;
 
 
     protected:
@@ -19,14 +21,25 @@ class Character
         std::string getName() const;
         Point getLocation() const;
         int getLivePoints() const;
+        char getCharacterType() const;
+        bool getIsInAGroup() const;
 
         // setters
         void setLivePoints(int points);
+        void setCharacterType(char type);
+        void setIsInAGroup(bool is);
 
     public:
 
         // constructor
         Character(const std::string &name, const Point &location);
+
+        // public getters
+        bool getPIsInAGroup() const;
+        Point getPLocation() const;
+
+        // public setters
+        void setPIsInAGroup(bool is);
 
         Character(const Character& other) = delete;  // Deleted copy constructor
         Character& operator=(const Character& other) = delete;  // Deleted copy assignment operator
@@ -40,7 +53,7 @@ class Character
         virtual bool isAlive() const;
         virtual double distance(Character *other) const;
         virtual void hit(int number);
-        virtual std::string print() const = 0;
+        std::string print() const;
 
         // other methods
         

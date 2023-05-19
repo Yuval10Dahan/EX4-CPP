@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <vector>
 #include "Point.hpp"
 
 
@@ -66,9 +67,32 @@ void Point::print() const
     cout << "(" << this->xCoordinate_ << "," << this->yCoordinate_ << ")" << endl;
 }
 
+// This method returns the closest point to the destination point, which is
+// at most the given distance from the source point
 Point Point::moveTowards(Point &sourceP, Point &destP, double distance)
 {
-    return Point();
+    // differences between the points coordinates
+    double diff1 = sourceP.getX() - destP.getX();
+    double diff2 = sourceP.gety() - destP.gety();
+
+    // distance between the points
+    double currDistance = sourceP.distance(destP);
+
+    // the given distance is bigger than the distance between the points - return the destination
+    if (currDistance <= distance) 
+    {
+        return destP;
+    }
+
+    // the ratio between the steps to move to the actual distance between the points
+    double ratio = distance / currDistance;
+    
+    // calculate the coordinates of the nearest possible point to advance
+    double newX = sourceP.getX() + ratio * diff1;
+    double newY = sourceP.gety() + ratio * diff2;
+
+    // return the desired point
+    return Point(newX, newY);
 }
 
 // this method print the point as a string

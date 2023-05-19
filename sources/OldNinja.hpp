@@ -23,7 +23,4 @@ class OldNinja : public Ninja
 
         // distructor
         ~OldNinja() override;
-
-        // override methods
-        std::string print() const override;
 };

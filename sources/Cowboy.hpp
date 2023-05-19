@@ -35,8 +35,6 @@ class Cowboy : public Character
         int getBulletAmount() const;
         int getLivePoints() const;
         
-        std::string print() const override;
-        
         // other methods
         void shoot(Character *enemy);
         bool hasBullets() const;

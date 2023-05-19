@@ -17,10 +17,18 @@ int main()
     cout << "#############################################################" << endl;
     
     Point a(6,2);
+    Point b(0,0);
     // a.print();
 
     cout << "#############################################################" << endl;
 
     Cowboy *c = new Cowboy("yuval", a);
-    cout << c->print() << endl;
+    Cowboy *c2 = new Cowboy("cow", b);
+    // cout << c->print() << endl;
+    // int lp = c->getLivePoints();
+    // cout << lp << endl;
+    cout << c->isAlive() << endl;
+    cout << c->distance(c2) << endl;
+    c->hit(3);
+    
 }
