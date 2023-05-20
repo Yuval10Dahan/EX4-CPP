@@ -6,7 +6,6 @@
 
 using namespace std;
 
-#define METER 1
 #define N_HIT 40
 
 
@@ -16,8 +15,10 @@ Ninja::Ninja(std::string name, const Point &location) : Character(name, location
     setCharacterType('N');
 }
 
-
+ 
+// --------------------------
 // ### public getters ###
+// --------------------------
 
 // public getter for the "name" data member
 string Ninja::getPName() const
@@ -43,7 +44,10 @@ int Ninja::getPSpeed() const
     return this->getSpeed();
 }
 
+
+// --------------------------
 // ### protected getters ###
+// --------------------------
 
 // protected getter method for the "speed" data member
 int Ninja::getSpeed() const 
@@ -51,7 +55,9 @@ int Ninja::getSpeed() const
     return this->speed_;
 }
 
+// --------------------------
 // ### setters ###
+// --------------------------
 
 // setter method for the "speed" data member
 void Ninja::setSpeed(int speed)
@@ -59,18 +65,30 @@ void Ninja::setSpeed(int speed)
     this->speed_ = speed;
 }
 
+
+
+// this method advances the ninja a distance equal to its speed
 void Ninja::move(Character *enemy)
 {
-    // use moveTowards(point)
+    // if the distance to the enemy is bigger than the ninja speed - advance
+    if( (enemy != nullptr) && (this->distance(enemy) >= this->getSpeed()) )
+    {
+        // the most advanced point to the enemy
+        Point moveTo = Point::moveTowards(this->getPLocation(), enemy->getPLocation(), this->getSpeed());
+
+        // the ninja advance to the enemy
+        this->advance(moveTo);
+    }
+
+    else
+    {
+        throw runtime_error("This ninja can't move\n");
+    }
 }
 
 // this method slash the enemy
 void Ninja::slash(Character *enemy)
 {
-    // if the Ninja is alive and the distance to the enemy is less than 1 meter - slash the enemy
-    if( this->isAlive() && (this->distance(enemy) < METER) )
-    {
-        // reduce 40 livePoints from the enemy
-        enemy->hit(N_HIT);
-    }
+    // reduce 40 livePoints from the enemy
+    enemy->hit(N_HIT);
 }

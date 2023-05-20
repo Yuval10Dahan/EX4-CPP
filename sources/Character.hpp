@@ -37,6 +37,7 @@ class Character
         // public getters
         bool getPIsInAGroup() const;
         Point getPLocation() const;
+        char getPCharacterType() const;
 
         // public setters
         void setPIsInAGroup(bool is);
@@ -49,12 +50,10 @@ class Character
         // distructor - virtual
         virtual ~Character() = default;
 
-        // virtual methods
-        virtual bool isAlive() const;
-        virtual double distance(Character *other) const;
-        virtual void hit(int number);
-        std::string print() const;
-
         // other methods
-        
+        bool isAlive() const;
+        double distance(Character *other) const;
+        void hit(int number);
+        std::string print() const;
+        void advance(Point &next);
 };

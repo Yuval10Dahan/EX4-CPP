@@ -35,7 +35,6 @@ class Team
     protected:
 
         const std::vector<Character*>& getWarriors() const;
-        const std::vector<Point>& getPointsArray() const;
         Character* getLeader() const;
 
     public:
@@ -51,11 +50,17 @@ class Team
         // distructor - virtual
         virtual ~Team();
         
+        // virtual methods
+        virtual void replaceLeader();
+        virtual Character* findVictim(Team *rivals);
+        virtual void attackVictim(Character *victim, Team *rivals);
+        void cowboyAttack(Cowboy *cowboy, Character *victim);
+        void ninjaAttack(Ninja *ninja, Character *victim);
+
+        // other methods
         void add(Character *warrior);
         void attack(Team *rivals);
         int stillAlive() const;
         virtual void print() const;
-
-        void removeWarrior(size_t index);
-
+        
 };

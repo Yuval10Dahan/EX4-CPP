@@ -41,15 +41,11 @@ int Cowboy::getLivePoints() const
 // this method shoot the enemy
 void Cowboy::shoot(Character *enemy)
 {   
-    // if the cowboy is alive and has bullets - shoot the enemy
-    if(this->isAlive() && this->bulletAmount_ > 0)
-    {
-        // reduce 10 livePoints from the enemy
-        enemy->hit(C_HIT);
+    // reduce 10 livePoints from the enemy
+    enemy->hit(C_HIT);
 
-        // reduce cowboy bullet amount by 1
-        this->bulletAmount_ --;
-    }
+    // reduce cowboy bullet amount by 1
+    this->bulletAmount_ --;    
 }
 
 // this method check if the cowboy has bullets left

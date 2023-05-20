@@ -11,35 +11,33 @@ using namespace std;
 // constructor
 Character::Character(const std::string &name, const Point &location) : name_(name), location_(location) {}
 
-
+// --------------------------
 // ### protected getters ###
+// --------------------------
 
-// getter method for the "name" data member
+// protected getter method for the "name" data member
 string Character::getName() const
 {
     return this->name_;
 }
 
-// getter method for the "location" data member
+// protected getter method for the "location" data member
 Point Character::getLocation() const
 {
     return this->location_;
 }
 
-// getter method for the "livePoints" data member
+// protected getter method for the "livePoints" data member
 int Character::getLivePoints() const
 {
     return this->livePoints_;
 }
 
-// getter method for the "characterType" data member
+// protected getter method for the "characterType" data member
 char Character::getCharacterType() const
 {
     return this->characterType_;
 }
-
-
-// ### public getters ###
 
 // public getter method for the "IsInAGroup" data member
 bool Character::getIsInAGroup() const
@@ -47,14 +45,34 @@ bool Character::getIsInAGroup() const
     return this->isInAGroup_;
 }
 
+
+// --------------------------
+// ### public getters ###
+// --------------------------
+
+
 // public getter method for the "location" data member
 Point Character::getPLocation() const
 {
     return this->getLocation();
 }
 
+// public getter for the "IsInAGroup" data member
+bool Character::getPIsInAGroup() const
+{
+    return this->getIsInAGroup();
+}
 
-// ### setters ###
+// public getter method for the "characterType" data member
+char Character::getPCharacterType() const
+{
+    return this->getCharacterType();
+}
+
+
+// --------------------------
+// ### protected setters ###
+// --------------------------
 
 // setter method for the "livePoints" data member
 void Character::setLivePoints(int points)
@@ -74,11 +92,10 @@ void Character::setIsInAGroup(bool is)
     this->isInAGroup_ = is;
 }
 
-// public getter for the "IsInAGroup" data member
-bool Character::getPIsInAGroup() const
-{
-    return this->getIsInAGroup();
-}
+
+// --------------------------
+// ### public setters ###
+// --------------------------
 
 // public setter for the "IsInAGroup" data member
 void Character::setPIsInAGroup(bool is) 
@@ -86,10 +103,12 @@ void Character::setPIsInAGroup(bool is)
     this->isInAGroup_ = is;
 }
 
+
 // // distructor
 // Character::~Character()
 // {
 // }
+
 
 // this method return if the current character is still alive
 bool Character::isAlive() const
@@ -144,4 +163,10 @@ std::string Character::print() const
     }
     
     return characterPrint;
+}
+
+// this method advance the character to the given location
+void Character::advance(Point &next)
+{
+    this->location_ = next;
 }
