@@ -19,7 +19,7 @@ Team::~Team()
 
 
 // --------------------------
-// ### public getters ###
+// ### protected getters ###
 // --------------------------
 
 // getter method for the "warriors" data member
@@ -35,6 +35,30 @@ Character* Team::getLeader() const
 }
 
 
+// --------------------------
+// ### public getters ###
+// --------------------------
+
+const std::vector<Character*>& Team::getPWarriors() const
+{
+    return this->getWarriors();
+}
+
+Character* Team::getPLeader() const
+{
+    return this->getLeader();
+}
+
+
+// --------------------------
+// ### public setters ###
+// --------------------------
+
+// setter method for the "leader" data member
+void Team::setLeader(Character* leader)
+{
+    this->leader_ = leader;
+}
 
 // this method add a warrior to the team        
 void Team::add(Character *warrior)
@@ -58,9 +82,10 @@ void Team::add(Character *warrior)
     warrior->setPIsInAGroup(true);
 }
 
+// this method attack the rivals
 void Team::attack(Team *rivals)
 {
-    // invalid rivals
+    // invalid rivals 
     if(rivals == nullptr) throw invalid_argument("The rival team is nullptr\n");
 
     // if the team leader is dead - replace him
@@ -90,9 +115,27 @@ int Team::stillAlive() const
     return livingWarriors;
 }
 
+// this method prints the warriors details
+// first the cowboys, after that the ninjas
 void Team::print() const
 {
+    // first go through all the Cowboys
+    for(Character *cowboy : warriors_)
+    {
+        if(cowboy->getPCharacterType() == 'C')
+        {
+            cout << cowboy->print();
+        }    
+    }
 
+    // now go through all the Ninjas
+    for(Character *ninja : warriors_)
+    {
+        if(ninja->getPCharacterType() == 'N')
+        {
+            cout << ninja->print();
+        }    
+    }
 }
 
 // this method replace the team leader in case he is dead
@@ -189,6 +232,7 @@ Character* Team::findVictim(Team *rivals)
     }
 }
 
+// this method cause the team to attack a specific victim
 void Team::attackVictim(Character *victim, Team *rivals)
 {
     // in case there is a victim to attack and the attacking team has living warriors
@@ -242,7 +286,7 @@ void Team::attackVictim(Character *victim, Team *rivals)
                 // if character is alive continue
                 if(ninja->isAlive())
                 {
-                    // cast the Character into Cowboy
+                    // cast the Character into Ninja
                     Ninja *castingNinja = dynamic_cast<Ninja*>(ninja);
 
                     // if victim is alive
@@ -279,6 +323,7 @@ void Team::attackVictim(Character *victim, Team *rivals)
     }
 }
 
+// this method cause a cowboy to attack
 void Team::cowboyAttack(Cowboy *cowboy, Character *victim)
 {
     // if the cowboy has bullets left - he is shooting the victim
@@ -294,6 +339,7 @@ void Team::cowboyAttack(Cowboy *cowboy, Character *victim)
     }
 }
 
+// this method cause a ninja to attack
 void Team::ninjaAttack(Ninja *ninja, Character *victim)
 {
     // if the ninja is less than a meter away

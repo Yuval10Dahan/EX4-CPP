@@ -17,14 +17,14 @@ class Character
 
 
     protected:
-        // getters
+        // protected getters
         std::string getName() const;
         Point getLocation() const;
         int getLivePoints() const;
         char getCharacterType() const;
         bool getIsInAGroup() const;
 
-        // setters
+        // protected setters
         void setLivePoints(int points);
         void setCharacterType(char type);
         void setIsInAGroup(bool is);

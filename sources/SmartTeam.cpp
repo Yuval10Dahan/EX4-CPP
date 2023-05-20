@@ -14,6 +14,21 @@ SmartTeam::~SmartTeam()
 
 }
 
+void SmartTeam::replaceLeader() 
+{
+
+}
+
+Character* SmartTeam::findVictim(Team *rivals)
+{
+
+}
+
+void SmartTeam::attackVictim(Character *victim, Team *rivals)
+{
+
+}
+
 void SmartTeam::print() const
 {
 

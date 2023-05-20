@@ -15,13 +15,6 @@
  
 
 namespace ariel{}
-
-
-// typedef struct fighter
-// {
-
-// }fighter;
-
  
 
 
@@ -34,6 +27,7 @@ class Team
 
     protected:
 
+        // protected getters
         const std::vector<Character*>& getWarriors() const;
         Character* getLeader() const;
 
@@ -41,6 +35,13 @@ class Team
 
         // constructor
         Team(Character *leader);
+
+        // public getters
+        const std::vector<Character*>& getPWarriors() const;
+        Character* getPLeader() const;
+
+        // public setters
+        void setLeader(Character* leader);
 
         Team(const Team& other) = delete;  // Deleted copy constructor
         Team& operator=(const Team& other) = delete;  // Deleted copy assignment operator
@@ -59,7 +60,7 @@ class Team
 
         // other methods
         void add(Character *warrior);
-        void attack(Team *rivals);
+        void attack(Team *rivals); 
         int stillAlive() const;
         virtual void print() const;
         
