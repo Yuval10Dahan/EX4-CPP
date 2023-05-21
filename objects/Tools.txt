@@ -1,28 +1,19 @@
-StudentTest1.cpp:166: ERROR: CHECK_EQ( team2.stillAlive(), i + 2 ) is NOT correct!
-  values: CHECK_EQ( 1, 2 )
-
-StudentTest1.cpp:166: ERROR: CHECK_EQ( team2.stillAlive(), i + 2 ) is NOT correct!
-  values: CHECK_EQ( 2, 3 )
-
-StudentTest1.cpp:166: ERROR: CHECK_EQ( team2.stillAlive(), i + 2 ) is NOT correct!
-  values: CHECK_EQ( 3, 4 )
-
-StudentTest1.cpp:166: ERROR: CHECK_EQ( team2.stillAlive(), i + 2 ) is NOT correct!
-  values: CHECK_EQ( 4, 5 )
-
-StudentTest1.cpp:166: ERROR: CHECK_EQ( team2.stillAlive(), i + 2 ) is NOT correct!
-  values: CHECK_EQ( 5, 6 )
-
-StudentTest1.cpp:166: ERROR: CHECK_EQ( team2.stillAlive(), i + 2 ) is NOT correct!
-  values: CHECK_EQ( 6, 7 )
-
-StudentTest1.cpp:166: ERROR: CHECK_EQ( team2.stillAlive(), i + 2 ) is NOT correct!
-  values: CHECK_EQ( 7, 8 )
-
-StudentTest1.cpp:166: ERROR: CHECK_EQ( team2.stillAlive(), i + 2 ) is NOT correct!
-  values: CHECK_EQ( 8, 9 )
-
-StudentTest1.cpp:166: ERROR: CHECK_EQ( team2.stillAlive(), i + 2 ) is NOT correct!
-  values: CHECK_EQ( 9, 10 )
-
-StudentTest1.cpp:171: ERROR: CHECK_THROWS_AS( team1.add(over), std::runtime_error ) did NOT throw at all!
+/usr/bin/ld: StudentTest1.o: in function `DOCTEST_ANON_SUITE_7::DOCTEST_ANON_FUNC_16()':
+StudentTest1.cpp:(.text+0x40b9): undefined reference to `Team::~Team()'
+/usr/bin/ld: StudentTest1.cpp:(.text+0x40e3): undefined reference to `Team::~Team()'
+/usr/bin/ld: StudentTest1.o: in function `DOCTEST_ANON_SUITE_7::DOCTEST_ANON_FUNC_18()':
+StudentTest1.cpp:(.text+0x4af0): undefined reference to `Team::~Team()'
+/usr/bin/ld: StudentTest1.cpp:(.text+0x4b0b): undefined reference to `Team::~Team()'
+/usr/bin/ld: StudentTest1.o: in function `DOCTEST_ANON_SUITE_7::DOCTEST_ANON_FUNC_20()':
+StudentTest1.cpp:(.text+0x4c72): undefined reference to `Team::~Team()'
+/usr/bin/ld: StudentTest1.o:StudentTest1.cpp:(.text+0x5095): more undefined references to `Team::~Team()' follow
+/usr/bin/ld: StudentTest1.o: in function `Team2::~Team2()':
+StudentTest1.cpp:(.text._ZN5Team2D2Ev[_ZN5Team2D2Ev]+0x11): undefined reference to `Team::~Team()'
+/usr/bin/ld: objects/SmartTeam.o: in function `SmartTeam::~SmartTeam()':
+SmartTeam.cpp:(.text._ZN9SmartTeamD2Ev[_ZN9SmartTeamD2Ev]+0x11): undefined reference to `Team::~Team()'
+/usr/bin/ld: objects/SmartTeam.o:(.data.rel.ro+0x50): undefined reference to `typeinfo for Team'
+/usr/bin/ld: objects/Team2.o:(.data.rel.ro+0x50): undefined reference to `typeinfo for Team'
+/usr/bin/ld: objects/Team.o: in function `Team::Team(Character*)':
+Team.cpp:(.text+0x1b): undefined reference to `vtable for Team'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:22: test] Error 1
