@@ -19,7 +19,7 @@ Cowboy::Cowboy(const string &name, const Point &location) : Character(name, loca
 }
 
 // distructor
-Cowboy::~Cowboy()
+Cowboy::~Cowboy() 
 {
 
 }
@@ -41,15 +41,19 @@ int Cowboy::getLivePoints() const
 // this method shoot the enemy
 void Cowboy::shoot(Character *enemy)
 {   
-    // reduce 10 livePoints from the enemy
-    enemy->hit(C_HIT);
+    // shoot only if the cowboy has bullets
+    if(this->hasboolets())
+    {
+        // reduce 10 livePoints from the enemy
+        enemy->hit(C_HIT);
 
-    // reduce cowboy bullet amount by 1
-    this->bulletAmount_ --;    
+        // reduce cowboy bullet amount by 1
+        this->bulletAmount_ --;  
+    }
 }
 
 // this method check if the cowboy has bullets left
-bool Cowboy::hasBullets() const
+bool Cowboy::hasboolets() const
 {
     return (this->bulletAmount_ > 0);
 }

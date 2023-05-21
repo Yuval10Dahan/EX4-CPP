@@ -327,7 +327,7 @@ void Team::attackVictim(Character *victim, Team *rivals)
 void Team::cowboyAttack(Cowboy *cowboy, Character *victim)
 {
     // if the cowboy has bullets left - he is shooting the victim
-    if(cowboy->hasBullets())
+    if(cowboy->hasboolets())
     {
         cowboy->shoot(victim);
     }

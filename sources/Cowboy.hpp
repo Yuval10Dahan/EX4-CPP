@@ -35,6 +35,6 @@ class Cowboy : public Character
         
         // other methods
         void shoot(Character *enemy);
-        bool hasBullets() const;
+        bool hasboolets() const;
         void reload();
 };

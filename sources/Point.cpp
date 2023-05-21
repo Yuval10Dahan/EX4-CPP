@@ -71,6 +71,8 @@ void Point::print() const
 // at most the given distance from the source point
 Point Point::moveTowards(const Point &sourceP, const Point &destP, double distance)
 {
+    if(distance < 0) throw invalid_argument("Distance can't be negative\n");
+
     // differences between the points coordinates
     double diff1 = sourceP.getX() - destP.getX();
     double diff2 = sourceP.gety() - destP.gety();

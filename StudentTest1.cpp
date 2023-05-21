@@ -215,6 +215,8 @@ TEST_SUITE("Battle related methods") {
         auto cowboy = create_cowboy();
         auto target = create_oninja();
 
+        
+
         auto shoot = [&](int times) {
             for (int i = 0; i < times; i++) {
                 cowboy->shoot(target);
