@@ -9,7 +9,7 @@ using namespace std;
 #define TEAM_MAX_SIZE 10
 #define METER 1
 
-
+// constructor
 Team::Team(Character *leader) : leader_(leader) 
 {
     // in case leader is nullptr
@@ -19,6 +19,7 @@ Team::Team(Character *leader) : leader_(leader)
     this->add(leader);
 }
 
+// distructor
 Team::~Team()
 {
 

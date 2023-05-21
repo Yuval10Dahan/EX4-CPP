@@ -9,8 +9,6 @@
 #include "TrainedNinja.hpp"
 
 
-
-
 namespace ariel{}
  
 
@@ -27,7 +25,6 @@ class Team
         // getters
         const std::vector<Character*>& getWarriors() const;
         Character* getLeader();
-        // Character& getLeader();
 
         // constructor
         Team(Character *leader);
@@ -47,10 +44,10 @@ class Team
         virtual void replaceLeader();
         virtual Character* findVictim(Team *rivals);
         virtual void attackVictim(Character *victim, Team *rivals);
+        
+        // other methods
         void cowboyAttack(Cowboy *cowboy, Character *victim);
         void ninjaAttack(Ninja *ninja, Character *victim);
-
-        // other methods
         void add(Character *warrior);
         void attack(Team *rivals); 
         int stillAlive();

@@ -15,7 +15,9 @@ Point::Point(double xCoordinate, double yCoordinate) : xCoordinate_(xCoordinate)
 Point::Point() : xCoordinate_(ZERO), yCoordinate_(ZERO) {}
 
 
+// --------------------------
 // ### getters ###
+// --------------------------
 
 // getter method for the "x" data member
 double Point::getX() const
@@ -29,7 +31,9 @@ double Point::getY() const
     return this->yCoordinate_;
 }
 
+// --------------------------
 // ### setters ###
+// --------------------------
 
 // setter method for the "x" data member
 void Point::setX(double xCoordinate)

@@ -19,19 +19,18 @@ Cowboy::Cowboy(string name, const Point &location) : Character(name, location),
     setCharacterType('C');
 }
 
-// // distructor
-// Cowboy::~Cowboy() 
-// { 
-
-// }
   
+// --------------------------
 // ### getters ###
+// --------------------------
 
 // getter method for the "bulletAmount" data member
 int Cowboy::getBulletAmount() const 
 {
     return this->bulletAmount_;
 }
+
+
 
 // this method shoot the enemy
 void Cowboy::shoot(Character *enemy)

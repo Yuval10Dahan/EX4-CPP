@@ -21,6 +21,7 @@ Character::Character(const Character &other)
     this->isInAGroup_ = other.getIsInAGroup();
 }
 
+// copy assignment operator
 Character& Character::operator=(const Character &other)
 {
     // in case that other is actually this
@@ -98,12 +99,7 @@ void Character::setIsInAGroup(bool is)
     this->isInAGroup_ = is;
 }
  
- 
 
-// // distructor
-// Character::~Character()
-// {
-// }
 
 
 // this method return if the current character is still alive
