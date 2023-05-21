@@ -7,7 +7,7 @@
 using namespace std;
 
 #define N_HIT 40
-
+#define METER 1
 
 // constructor
 Ninja::Ninja(string name, const Point &location) : Character(name, location) 
@@ -67,6 +67,11 @@ void Ninja::slash(Character *enemy)
         throw runtime_error("The Ninja can't slash himself\n");
     }
 
-    // reduce 40 livePoints from the enemy
-    enemy->hit(N_HIT);
+    // if the ninja is less than meter away from enemy - the
+    // ninja attacking the enemy, otherwise the ninja doe's nothing
+    if(this->distance(enemy) < METER)
+    {
+        // reduce 40 livePoints from the enemy
+        enemy->hit(N_HIT);
+    }
 }

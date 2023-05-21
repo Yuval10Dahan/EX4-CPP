@@ -56,7 +56,7 @@ void Team::setLeader(Character* leader)
 void Team::add(Character *warrior)
 {
     // if the team is fully occupied - throw an exception
-    if(this->warriors_.size() > TEAM_MAX_SIZE)
+    if(this->warriors_.size() >= TEAM_MAX_SIZE)
     {
         throw runtime_error("The team is full\n");
     }
