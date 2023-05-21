@@ -12,7 +12,7 @@ using namespace std;
 
 
 // constructor
-Cowboy::Cowboy(const string &name, const Point &location) : Character(name, location),
+Cowboy::Cowboy(std::string name, const Point &location) : Character(name, location),
  bulletAmount_(BULLET_AMOUNT), livePoints_(C_LIVES) 
 {
     setCharacterType('C');
@@ -23,7 +23,7 @@ Cowboy::~Cowboy()
 {
 
 }
-
+ 
 // ### getters ###
 
 // getter method for the "bulletAmount" data member

@@ -18,7 +18,7 @@ class Ninja : public Character
     public:
     
         // getters
-        
+          
         int getSpeed() const;
 
         // setters

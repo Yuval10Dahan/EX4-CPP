@@ -13,13 +13,13 @@ class Cowboy : public Character
     private:
         int bulletAmount_;
         int livePoints_;
-
+ 
 
 
     public:
 
         // constructor
-        Cowboy(const std::string &name, const Point &location);
+        Cowboy(std::string name, const Point &location);
 
         Cowboy(const Cowboy &other) = delete;  // Deleted copy constructor
         Cowboy& operator=(const Cowboy &other) = delete;  // Deleted copy assignment operator

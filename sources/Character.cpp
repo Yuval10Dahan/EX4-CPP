@@ -91,7 +91,7 @@ void Character::setIsInAGroup(bool is)
 {
     this->isInAGroup_ = is;
 }
-
+ 
 
 // --------------------------
 // ### public setters ###
