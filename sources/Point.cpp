@@ -69,7 +69,7 @@ void Point::print() const
 
 // This method returns the closest point to the destination point, which is
 // at most the given distance from the source point
-Point Point::moveTowards(Point &sourceP, Point &destP, double distance)
+Point Point::moveTowards(const Point &sourceP, const Point &destP, double distance)
 {
     // differences between the points coordinates
     double diff1 = sourceP.getX() - destP.getX();

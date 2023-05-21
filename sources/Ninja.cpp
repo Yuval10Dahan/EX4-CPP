@@ -80,7 +80,7 @@ void Ninja::move(Character *enemy)
         this->advance(moveTo);
     }
 
-    else
+    else 
     {
         throw runtime_error("This ninja can't move\n");
     }

@@ -339,7 +339,7 @@ void Team::cowboyAttack(Cowboy *cowboy, Character *victim)
     }
 }
 
-// this method cause a ninja to attack
+// this method cause a ninja to attack 
 void Team::ninjaAttack(Ninja *ninja, Character *victim)
 {
     // if the ninja is less than a meter away
