@@ -21,7 +21,7 @@ Cowboy::Cowboy(string name, const Point &location) : Character(name, location),
 
 // // distructor
 // Cowboy::~Cowboy() 
-// {
+// { 
 
 // }
   
@@ -36,20 +36,36 @@ int Cowboy::getBulletAmount() const
 // this method shoot the enemy
 void Cowboy::shoot(Character *enemy)
 {   
-    // shoot only if the cowboy has bullets and the enemy is alive
-    if( (this->hasboolets()) && (enemy->isAlive() == true) )
+    // in case the enemy is the attacking cowboy itself
+    if(this == enemy)
     {
-        // reduce 10 livePoints from the enemy
-        enemy->hit(C_HIT);
-
-        // reduce cowboy bullet amount by 1
-        this->bulletAmount_ --;  
+        throw runtime_error("The Cowboy can't shoot himself\n");
     }
 
-    // otherwise throw exception
-    else
+    // if the attacking cowboy is dead - throw exception
+    if(this->isAlive() == false)
     {
-        throw runtime_error("The enemy is allready dead\n");
+        throw runtime_error("The cowboy can't shoot when it is dead\n");
+    }
+
+    // cowboy has bullets
+    if(this->hasboolets())
+    {
+        // enemy is alive - the cowboy shoot it
+        if(enemy->isAlive() == true)
+        {
+            // reduce 10 livePoints from the enemy
+            enemy->hit(C_HIT);
+
+            // reduce cowboy bullet amount by 1
+            this->bulletAmount_ --;  
+        }
+
+        // otherwise throw exception
+        else
+        {
+           throw runtime_error("The enemy is allready dead\n"); 
+        }
     }
 }
 
@@ -66,5 +82,11 @@ void Cowboy::reload()
     if(this->isAlive())
     {
         this->bulletAmount_ = BULLET_AMOUNT;
+    }
+
+    // otherwise - throw exception
+    else
+    {
+        throw runtime_error("Dead cowboy can't reload\n");
     }
 }

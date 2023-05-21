@@ -124,6 +124,10 @@ double Character::distance(const Character *other) const
 // this method reduce the livePoints of the Character object
 void Character::hit(int number)
 {
+    if(number < 0)
+    {
+        throw invalid_argument("The hit number can't be negative number\n");
+    }
     // reduce of the livePoints is valid
     if(this->livePoints_ >= number)
     {
