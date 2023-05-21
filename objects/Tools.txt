@@ -1,3 +1,5 @@
-/home/yuval/Documents/EX4-TESTS/sources/Ninja.hpp:34:15: error: parameter 'name' is const-qualified in the function declaration; const-qualification of parameters only has an effect in function definitions [readability-avoid-const-params-in-decls,-warnings-as-errors]
-        Ninja(const std::string name, const Point &location);
-              ^~~~~~
+sources/Ninja.cpp:77:43: error: non-const lvalue reference to type 'Point' cannot bind to a temporary of type 'Point'
+        Point moveTo = Point::moveTowards(this->getPLocation(), enemy->getPLocation(), this->getSpeed());
+                                          ^~~~~~~~~~~~~~~~~~~~
+sources/Point.hpp:33:41: note: passing argument to parameter 'sourceP' here
+        static Point moveTowards(Point &sourceP, Point &destP, double distance);
