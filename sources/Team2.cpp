@@ -41,7 +41,7 @@ void Team2::replaceLeader()
 }
 
 // this method finds a new victim on the rival team
-Character* Team::findVictim(Team *rivals)
+Character* Team2::findVictim(Team *rivals)
 {
     // in case the rival team has living warriors
     if(rivals->stillAlive() > 0)
@@ -75,7 +75,7 @@ Character* Team::findVictim(Team *rivals)
 }
 
 // this method cause the team to attack a specific victim
-void Team::attackVictim(Character *victim, Team *rivals)
+void Team2::attackVictim(Character *victim, Team *rivals)
 {
     // in case there is a victim to attack and the attacking team has living warriors
     if( (victim != nullptr) && (rivals->stillAlive() > 0) && (this->stillAlive() > 0) )

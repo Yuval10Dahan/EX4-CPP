@@ -3,15 +3,14 @@
 #include <vector>
 #include "Character.hpp"
 #include "Cowboy.hpp"
-#include "Ninja.hpp"
+// #include "Ninja.hpp"
 #include "OldNinja.hpp"
 #include "YoungNinja.hpp"
 #include "TrainedNinja.hpp"
-#include "Team2.hpp"
-#include "SmartTeam.hpp"
+// #include "Team2.hpp"
+// #include "SmartTeam.hpp"
 
 
-// class Ninja; // forward declaration
 
 namespace ariel{}
  
@@ -42,10 +41,10 @@ class Team
         // public setters
         void setLeader(Character* leader);
 
-        Team(const Team& other) = delete;  // Deleted copy constructor
-        Team& operator=(const Team& other) = delete;  // Deleted copy assignment operator
-        Team(Team&& other) = delete;  // Deleted move constructor
-        Team& operator=(Team&& other) = delete;  // Deleted move assignment operator
+        Team(const Team &other) = delete;  // Deleted copy constructor
+        Team& operator=(const Team &other) = delete;  // Deleted copy assignment operator
+        Team(Team &&other) = delete;  // Deleted move constructor
+        Team& operator=(Team &&other) = delete;  // Deleted move assignment operator
  
         // distructor - virtual
         virtual ~Team();
@@ -62,5 +61,4 @@ class Team
         void attack(Team *rivals); 
         int stillAlive() const;
         virtual void print() const;
-        
 };

@@ -42,10 +42,10 @@ class Character
         // public setters
         void setPIsInAGroup(bool is);
 
-        Character(const Character& other) = delete;  // Deleted copy constructor
-        Character& operator=(const Character& other) = delete;  // Deleted copy assignment operator
-        Character(Character&& other) = delete;  // Deleted move constructor
-        Character& operator=(Character&& other) = delete;  // Deleted move assignment operator
+        Character(const Character &other) = delete;  // Deleted copy constructor
+        Character& operator=(const Character &other) = delete;  // Deleted copy assignment operator
+        Character(Character &&other) = delete;  // Deleted move constructor
+        Character& operator=(Character &&other) = delete;  // Deleted move assignment operator
 
         // distructor - virtual
         virtual ~Character() = default;
