@@ -36,7 +36,7 @@ const std::vector<Character*>& Team::getWarriors() const
 }
 
 // getter method for the "leader" data member
-Character* Team::getLeader() const
+Character* Team::getLeader()
 {
     return this->leader_;
 }

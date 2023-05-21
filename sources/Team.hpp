@@ -26,7 +26,7 @@ class Team
 
         // getters
         const std::vector<Character*>& getWarriors() const;
-        Character* getLeader() const;
+        Character* getLeader();
 
         // constructor
         Team(Character *leader);

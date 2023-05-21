@@ -18,6 +18,7 @@ Team2::~Team2()
 }
 
 
+
 // this method replace the team leader in case he is dead
 void Team2::replaceLeader()
 {
@@ -169,5 +170,5 @@ void Team2::print() const
     for(Character *warrior : this->getWarriors())
     {
         cout << warrior->print();
-    }
+    }    
 }
