@@ -21,7 +21,7 @@ void SmartTeam::replaceLeader()
 
 Character* SmartTeam::findVictim(Team *rivals)
 {
-    return this->getPLeader();
+    return this->getLeader();
 }
 
 void SmartTeam::attackVictim(Character *victim, Team *rivals)

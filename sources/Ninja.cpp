@@ -16,40 +16,12 @@ Ninja::Ninja(string name, const Point &location) : Character(name, location)
 }
 
  
-// --------------------------
-// ### public getters ###
-// --------------------------
-
-// public getter for the "name" data member
-string Ninja::getPName() const
-{
-    return this->getName();
-}
-
-// public getter for the "location" data member
-Point Ninja::getPLocation() const
-{
-    return this->getLocation();
-}
-
-// public getter for the "livePoints" data member
-int Ninja::getPLivePoints() const
-{
-    return this->getLivePoints();
-}
-
-// public getter for the "speed" data member
-int Ninja::getPSpeed() const 
-{
-    return this->getSpeed();
-}
-
 
 // --------------------------
-// ### protected getters ###
+// ### getters ###
 // --------------------------
 
-// protected getter method for the "speed" data member
+// getter method for the "speed" data member
 int Ninja::getSpeed() const 
 {
     return this->speed_;
@@ -74,7 +46,7 @@ void Ninja::move(Character *enemy)
     if( (enemy != nullptr) && (this->distance(enemy) >= this->getSpeed()) )
     {
         // the most advanced point to the enemy
-        Point moveTo = Point::moveTowards(this->getPLocation(), enemy->getPLocation(), this->getSpeed());
+        Point moveTo = Point::moveTowards(this->getLocation(), enemy->getLocation(), this->getSpeed());
 
         // the ninja advance to the enemy
         this->advance(moveTo);

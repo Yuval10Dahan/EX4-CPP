@@ -6,7 +6,7 @@
 
 using namespace std;
 
-
+ 
 Team2::Team2(Character *leader) : Team(leader) 
 {
     
@@ -22,16 +22,16 @@ Team2::~Team2()
 void Team2::replaceLeader()
 {
     // in case the team leader is dead and the team has living warriors
-    if( (this->getPLeader()->isAlive() == false) && (this->stillAlive() > 0) )
+    if( (this->getLeader()->isAlive() == false) && (this->stillAlive() > 0) )
     {
         // max double
         double minDistanceFromLeader = std::numeric_limits<double>::max();
 
         // holds the pointer to the dead leader
-        Character *deadLeader = this->getPLeader();
+        Character *deadLeader = this->getLeader();
 
         // go through all the Warriors
-        for(Character *warrior : this->getPWarriors())
+        for(Character *warrior : this->getWarriors())
         {
             // find the closest living warrior to the dead leader, and set him as the team leader
             if( (warrior->isAlive()) && (warrior->distance(deadLeader) < minDistanceFromLeader) )
@@ -56,14 +56,14 @@ Character* Team2::findVictim(Team *rivals)
         Character *currentVictim;
 
         // go through all the Warriors
-        for(Character *warrior : this->getPWarriors())
+        for(Character *warrior : this->getWarriors())
         {
             // find the closest living warrior from the rival team to
             // the attacking leader and set him as the current victim
-            if( (warrior->isAlive()) && (warrior->distance(this->getPLeader()) < minDistanceFromLeader) )
+            if( (warrior->isAlive()) && (warrior->distance(this->getLeader()) < minDistanceFromLeader) )
             {
                 currentVictim = warrior;
-                minDistanceFromLeader = warrior->distance(this->getPLeader());
+                minDistanceFromLeader = warrior->distance(this->getLeader());
             }    
         }
 
@@ -89,13 +89,13 @@ void Team2::attackVictim(Character *victim, Team *rivals)
         Character *currentVictim = victim;
 
         // first go through all the Cowboys
-        for(Character *warrior : this->getPWarriors())
+        for(Character *warrior : this->getWarriors())
         {
             // if character is alive continue
             if(warrior->isAlive())
             {
                 // in case the warrior is of type Cowboy
-                if(warrior->getPCharacterType() == 'C')
+                if(warrior->getCharacterType() == 'C')
                 {
                     // cast the Character into Cowboy
                     Cowboy *castingCowboy = dynamic_cast<Cowboy*>(warrior);
@@ -124,7 +124,7 @@ void Team2::attackVictim(Character *victim, Team *rivals)
                 }
 
                 // in case the warrior is of type Ninja
-                if(warrior->getPCharacterType() == 'N')
+                if(warrior->getCharacterType() == 'N')
                 {
                     // cast the Character into Ninja
                     Ninja *castingNinja = dynamic_cast<Ninja*>(warrior);
@@ -166,7 +166,7 @@ void Team2::attackVictim(Character *victim, Team *rivals)
 // according to the order of adding the characters
 void Team2::print() const
 {
-    for(Character *warrior : this->getPWarriors())
+    for(Character *warrior : this->getWarriors())
     {
         cout << warrior->print();
     }

@@ -25,9 +25,9 @@ Team::~Team()
 }
 
 
-// --------------------------
-// ### protected getters ###
-// --------------------------
+// -----------------
+// ### getters ###
+// -----------------
 
 // getter method for the "warriors" data member
 const std::vector<Character*>& Team::getWarriors() const
@@ -43,22 +43,7 @@ Character* Team::getLeader() const
 
 
 // --------------------------
-// ### public getters ###
-// --------------------------
-
-const std::vector<Character*>& Team::getPWarriors() const
-{
-    return this->getWarriors();
-}
-
-Character* Team::getPLeader() const
-{
-    return this->getLeader();
-}
-
-
-// --------------------------
-// ### public setters ###
+// ### setters ###
 // --------------------------
 
 // setter method for the "leader" data member
@@ -77,7 +62,7 @@ void Team::add(Character *warrior)
     }
 
     // if the warrior belong to a different team - throw an exception
-    if(warrior->getPIsInAGroup() == true)
+    if(warrior->getIsInAGroup() == true)
     {
         throw runtime_error("This warrior is allready in another team\n");
     }
@@ -86,7 +71,7 @@ void Team::add(Character *warrior)
     this->warriors_.push_back(warrior);
 
     // notify that the warrior is belong to the team
-    warrior->setPIsInAGroup(true);
+    warrior->setIsInAGroup(true);
 }
 
 // this method attack the rivals
@@ -109,7 +94,7 @@ void Team::attack(Team *rivals)
 int Team::stillAlive() const
 {
     int livingWarriors = 0;
-
+ 
     // if a warrior in the team is alive raise the counter by 1
     for(Character *warrior : warriors_)
     {
@@ -129,7 +114,7 @@ void Team::print() const
     // first go through all the Cowboys
     for(Character *cowboy : warriors_)
     {
-        if(cowboy->getPCharacterType() == 'C')
+        if(cowboy->getCharacterType() == 'C')
         {
             cout << cowboy->print();
         }    
@@ -138,7 +123,7 @@ void Team::print() const
     // now go through all the Ninjas
     for(Character *ninja : warriors_)
     {
-        if(ninja->getPCharacterType() == 'N')
+        if(ninja->getCharacterType() == 'N')
         {
             cout << ninja->print();
         }    
@@ -160,7 +145,7 @@ void Team::replaceLeader()
         // first go through all the Cowboys
         for(Character *cowboy : warriors_)
         {
-            if(cowboy->getPCharacterType() == 'C')
+            if(cowboy->getCharacterType() == 'C')
             {
                 // find the closest living warrior to the dead leader, and set him as the team leader
                 if( (cowboy->isAlive()) && (cowboy->distance(deadLeader) < minDistanceFromLeader) )
@@ -174,7 +159,7 @@ void Team::replaceLeader()
         // now go through all the Ninjas
         for(Character *ninja : warriors_)
         {
-            if(ninja->getPCharacterType() == 'N')
+            if(ninja->getCharacterType() == 'N')
             {
                 // find the closest living warrior to the dead leader, and set him as the team leader
                 if( (ninja->isAlive()) && (ninja->distance(deadLeader) < minDistanceFromLeader) )
@@ -202,7 +187,7 @@ Character* Team::findVictim(Team *rivals)
         // first go through all the Cowboys
         for(Character *cowboy : rivals->getWarriors())
         {
-            if(cowboy->getPCharacterType() == 'C')
+            if(cowboy->getCharacterType() == 'C')
             {
                 // find the closest living warrior from the rival team to
                 // the attacking leader and set him as the current victim
@@ -217,7 +202,7 @@ Character* Team::findVictim(Team *rivals)
         // now go through all the Ninjas
         for(Character *ninja : warriors_)
         {
-            if(ninja->getPCharacterType() == 'N')
+            if(ninja->getCharacterType() == 'N')
             {
                 // find the closest living warrior from the rival team to
                 // the attacking leader and set him as the current victim
@@ -251,7 +236,7 @@ void Team::attackVictim(Character *victim, Team *rivals)
         // first go through all the Cowboys
         for(Character *cowboy : warriors_)
         {
-            if(cowboy->getPCharacterType() == 'C')
+            if(cowboy->getCharacterType() == 'C')
             {
                 // if character is alive continue
                 if(cowboy->isAlive())
@@ -288,7 +273,7 @@ void Team::attackVictim(Character *victim, Team *rivals)
         // now go through all the Ninjas
         for(Character *ninja : warriors_)
         {
-            if(ninja->getPCharacterType() == 'N')
+            if(ninja->getCharacterType() == 'N')
             {
                 // if character is alive continue
                 if(ninja->isAlive())

@@ -3,12 +3,11 @@
 #include <vector>
 #include "Character.hpp"
 #include "Cowboy.hpp"
-// #include "Ninja.hpp"
+#include "Ninja.hpp"
 #include "OldNinja.hpp"
 #include "YoungNinja.hpp"
 #include "TrainedNinja.hpp"
-// #include "Team2.hpp"
-// #include "SmartTeam.hpp"
+
 
 
 
@@ -25,20 +24,14 @@ class Team
 
     public:
 
-        // protected getters
+        // getters
         const std::vector<Character*>& getWarriors() const;
         Character* getLeader() const;
-
-    public:
 
         // constructor
         Team(Character *leader);
 
-        // public getters
-        const std::vector<Character*>& getPWarriors() const;
-        Character* getPLeader() const;
-
-        // public setters
+        // setters
         void setLeader(Character* leader);
 
         Team(const Team &other) = delete;  // Deleted copy constructor

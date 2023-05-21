@@ -17,30 +17,21 @@ class Character
 
 
     public:
-        // protected getters
+
+        // getters
         std::string getName() const;
         Point getLocation() const;
         int getLivePoints() const;
         char getCharacterType() const;
         bool getIsInAGroup() const;
 
-        // protected setters
+        // setters
         void setLivePoints(int points);
         void setCharacterType(char type);
         void setIsInAGroup(bool is);
 
-    public:
-
         // constructor
         Character(std::string name, const Point &location);
-
-        // public getters
-        bool getPIsInAGroup() const;
-        Point getPLocation() const;
-        char getPCharacterType() const;
-
-        // public setters
-        void setPIsInAGroup(bool is);
 
         Character(const Character &other) = delete;  // Deleted copy constructor
         Character& operator=(const Character &other) = delete;  // Deleted copy assignment operator

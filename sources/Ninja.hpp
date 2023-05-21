@@ -18,14 +18,10 @@ class Ninja : public Character
     public:
     
         // getters
-          
         int getSpeed() const;
 
         // setters
-        
         void setSpeed(int speed);
-
-    public:
 
         // constructor
         Ninja(std::string name, const Point &location);
@@ -37,12 +33,6 @@ class Ninja : public Character
 
         // distructor - virtual
         ~Ninja() override {}
-
-        // for the ninjas classes
-        std::string getPName() const;
-        Point getPLocation() const;
-        int getPLivePoints() const;
-        int getPSpeed() const;
         
         // other methods
         void move(Character *enemy);
