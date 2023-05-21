@@ -11,8 +11,7 @@
 #include "SmartTeam.hpp"
 
 
-// using namespace std;
- 
+// class Ninja; // forward declaration
 
 namespace ariel{}
  

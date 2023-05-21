@@ -3,9 +3,6 @@
 #include "Character.hpp"
 
 
-
-// using namespace std;
-
 class Cowboy; // forward declaration
 
 namespace ariel{}

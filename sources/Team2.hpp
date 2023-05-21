@@ -2,7 +2,8 @@
 #include <iostream>
 #include "Team.hpp"
 
-// using namespace std; 
+
+// class Team; // forward declaration
 
 namespace ariel{}
 

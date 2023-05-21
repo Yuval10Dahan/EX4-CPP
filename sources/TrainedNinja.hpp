@@ -4,7 +4,6 @@
 #include "Cowboy.hpp"
 
 
-// using namespace std;
 
 namespace ariel{}
 

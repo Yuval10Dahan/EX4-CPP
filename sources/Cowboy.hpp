@@ -2,8 +2,6 @@
 #include <iostream>
 #include "Character.hpp"
 
- 
-// using namespace std; 
 
 class Ninja; // forward declaration
 
