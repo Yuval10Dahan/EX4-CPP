@@ -13,7 +13,7 @@ using namespace std;
 YoungNinja::YoungNinja(string name, const Point &location) : Ninja(name, location) 
 {
     setSpeed(YOUNG_SPEED);
-    setLivePoints(YOUNG_SPEED);
+    setLivePoints(YOUNG_LIVES);
 }
 
 // distructor

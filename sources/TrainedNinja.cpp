@@ -13,7 +13,7 @@ using namespace std;
 TrainedNinja::TrainedNinja(string name, const Point &location) : Ninja(name, location) 
 {
     setSpeed(TRAINED_SPEED);
-    setLivePoints(TRAINED_SPEED);
+    setLivePoints(TRAINED_LIVES);
 }
 
 // distructor
