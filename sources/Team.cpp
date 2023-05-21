@@ -19,10 +19,10 @@ Team::Team(Character *leader) : leader_(leader)
     this->add(leader);
 }
 
-// Team::~Team()
-// {
+Team::~Team()
+{
 
-// }
+}
 
 
 // -----------------
