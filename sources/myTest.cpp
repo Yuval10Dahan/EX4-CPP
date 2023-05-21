@@ -22,13 +22,20 @@
 
 //     cout << "#############################################################" << endl;
 
-//     Cowboy *c = new Cowboy("yuval", a);
-//     Cowboy *c2 = new Cowboy("cow", b);
+//     // Cowboy *c = new Cowboy("yuval", a);
+//     // Cowboy *c2 = new Cowboy("cow", b);
 //     // cout << c->print() << endl;
 //     // int lp = c->getLivePoints();
 //     // cout << lp << endl;
-//     cout << c->isAlive() << endl;
-//     cout << c->distance(c2) << endl;
-//     c->hit(3);
+//     // cout << c->isAlive() << endl;
+//     // cout << c->distance(c2) << endl;
+//     // c->hit(3);
+
+//     cout << "#############################################################" << endl;
+
+//     Cowboy *tom = new Cowboy("Tom", a);
+//     OldNinja *sushi = new OldNinja("sushi", b);
+
+//     Team team_A(nullptr);
     
 // }

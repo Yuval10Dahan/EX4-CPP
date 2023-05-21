@@ -184,7 +184,7 @@ TEST_SUITE("Classes initialization tests and Team modification( add(),stillAlive
         Team team2{captain2};
         CHECK_THROWS_AS(Team{captain2},std::runtime_error);
         CHECK_THROWS_AS(Team2{captain2},std::runtime_error);
-    }
+    } 
 
     TEST_CASE("Adding the same character to different teams") {
         auto captain1 = create_tninja();
@@ -215,11 +215,9 @@ TEST_SUITE("Battle related methods") {
         auto cowboy = create_cowboy();
         auto target = create_oninja();
 
-        
-
         auto shoot = [&](int times) {
             for (int i = 0; i < times; i++) {
-                cowboy->shoot(target);
+                cowboy->shoot(target); 
             }
         };
 

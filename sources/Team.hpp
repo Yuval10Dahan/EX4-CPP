@@ -23,7 +23,7 @@ class Team
         std::vector<Character*> warriors_;
         Character *leader_;
 
-    protected:
+    public:
 
         // protected getters
         const std::vector<Character*>& getWarriors() const;

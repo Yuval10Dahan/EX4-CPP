@@ -10,7 +10,14 @@ using namespace std;
 #define METER 1
 
 
-Team::Team(Character *leader) : leader_(leader) {}
+Team::Team(Character *leader) : leader_(leader) 
+{
+    // in case leader is nullptr
+    if(leader == nullptr) throw invalid_argument("Team can't get nullptr as parameter\n");
+
+    // add the leader to the team
+    this->add(leader);
+}
 
 Team::~Team()
 {

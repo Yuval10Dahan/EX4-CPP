@@ -15,7 +15,7 @@ class Ninja : public Character
         
 
 
-    protected:
+    public:
     
         // getters
         

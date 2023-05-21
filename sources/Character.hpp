@@ -16,7 +16,7 @@ class Character
         bool isInAGroup_ = false;
 
 
-    protected:
+    public:
         // protected getters
         std::string getName() const;
         Point getLocation() const;
