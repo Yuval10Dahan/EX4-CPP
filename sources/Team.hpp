@@ -7,8 +7,8 @@
 #include "OldNinja.hpp"
 #include "YoungNinja.hpp"
 #include "TrainedNinja.hpp"
-// #include "Team2.hpp"
-// #include "SmartTeam.hpp"
+#include "Team2.hpp"
+#include "SmartTeam.hpp"
 
 
 // using namespace std;
