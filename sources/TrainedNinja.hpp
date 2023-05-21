@@ -13,7 +13,7 @@ class TrainedNinja : public Ninja
     public:
 
         // constructor
-        TrainedNinja(const std::string &name, const Point &location);
+        TrainedNinja(std::string name, const Point &location);
 
         TrainedNinja(const TrainedNinja &other) = delete;  // Deleted copy constructor
         TrainedNinja& operator=(const TrainedNinja &other) = delete;  // Deleted copy assignment operator

@@ -14,7 +14,7 @@ class YoungNinja : public Ninja
     public:
 
         // constructor
-        YoungNinja(const std::string &name, const Point &location);
+        YoungNinja(std::string name, const Point &location);
 
         YoungNinja(const YoungNinja &other) = delete;  // Deleted copy constructor
         YoungNinja& operator=(const YoungNinja &other) = delete;  // Deleted copy assignment operator

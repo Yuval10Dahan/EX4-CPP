@@ -9,7 +9,7 @@ using namespace std;
 
 
 // constructor
-Character::Character(const std::string &name, const Point &location) : name_(name), location_(location) {}
+Character::Character(std::string name, const Point &location) : name_(name), location_(location) {}
 
 // --------------------------
 // ### protected getters ###

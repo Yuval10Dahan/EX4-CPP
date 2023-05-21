@@ -32,7 +32,7 @@ class Character
     public:
 
         // constructor
-        Character(const std::string &name, const Point &location);
+        Character(std::string name, const Point &location);
 
         // public getters
         bool getPIsInAGroup() const;

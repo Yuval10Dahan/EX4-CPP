@@ -10,7 +10,7 @@ using namespace std;
 
 
 // constructor
-TrainedNinja::TrainedNinja(const string &name, const Point &location) : Ninja(name, location) 
+TrainedNinja::TrainedNinja(string name, const Point &location) : Ninja(name, location) 
 {
     setSpeed(TRAINED_SPEED);
     setLivePoints(TRAINED_SPEED);
