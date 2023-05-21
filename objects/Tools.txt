@@ -1,5 +1,9 @@
-sources/Ninja.cpp:77:43: error: non-const lvalue reference to type 'Point' cannot bind to a temporary of type 'Point'
-        Point moveTo = Point::moveTowards(this->getPLocation(), enemy->getPLocation(), this->getSpeed());
-                                          ^~~~~~~~~~~~~~~~~~~~
-sources/Point.hpp:33:41: note: passing argument to parameter 'sourceP' here
-        static Point moveTowards(Point &sourceP, Point &destP, double distance);
+/usr/bin/ld: objects/Team.o: in function `Team::findVictim(Team*)':
+Team.cpp:(.text+0x7a0): multiple definition of `Team::findVictim(Team*)'; objects/Team2.o:Team2.cpp:(.text+0x1b0): first defined here
+/usr/bin/ld: objects/Team.o: in function `Team::attackVictim(Character*, Team*)':
+Team.cpp:(.text+0x9a0): multiple definition of `Team::attackVictim(Character*, Team*)'; objects/Team2.o:Team2.cpp:(.text+0x2e0): first defined here
+/usr/bin/ld: objects/Team2.o:(.data.rel.ro+0x28): undefined reference to `Team2::findVictim(Team*)'
+/usr/bin/ld: objects/Team2.o:(.data.rel.ro+0x30): undefined reference to `Team2::attackVictim(Character*, Team*)'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make: *** [Makefile:19: demo] Error 1
+*** Command failed. Exit code: 2 ***
