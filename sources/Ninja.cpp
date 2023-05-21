@@ -67,22 +67,26 @@ void Ninja::slash(Character *enemy)
         throw runtime_error("The Ninja can't slash himself\n");
     }
 
+    // if the attacking ninja is dead - throw exception
     if(this->isAlive() == false)
     {
         throw runtime_error("The Ninja can't slash when it is dead\n");
     }
 
-    // if the ninja is less than meter away from enemy, and
-    // the enemy is alive - the ninja attacking the enemy
-    if( (this->distance(enemy) < METER) && (enemy->isAlive() == true) )
+    // the ninja is less than meter away from enemy
+    if(this->distance(enemy) < METER)
     {
-        // reduce 40 livePoints from the enemy
-        enemy->hit(N_HIT);
-    }
-
-    // otherwise throw exception
-    else
-    {
-        throw runtime_error("The enemy is allready dead\n");
+        // if the enemy is alive - the ninja attacking the enemy
+        if(enemy->isAlive() == true)
+        {
+            // reduce 40 livePoints from the enemy
+            enemy->hit(N_HIT);
+        }
+        
+        // otherwise throw exception
+        else
+        {
+            throw runtime_error("The enemy is allready dead\n");
+        }
     }
 }

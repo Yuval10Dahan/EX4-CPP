@@ -24,7 +24,7 @@ Cowboy::Cowboy(string name, const Point &location) : Character(name, location),
 // {
 
 // }
- 
+  
 // ### getters ###
 
 // getter method for the "bulletAmount" data member
@@ -36,14 +36,20 @@ int Cowboy::getBulletAmount() const
 // this method shoot the enemy
 void Cowboy::shoot(Character *enemy)
 {   
-    // shoot only if the cowboy has bullets
-    if(this->hasboolets())
+    // shoot only if the cowboy has bullets and the enemy is alive
+    if( (this->hasboolets()) && (enemy->isAlive() == true) )
     {
         // reduce 10 livePoints from the enemy
         enemy->hit(C_HIT);
 
         // reduce cowboy bullet amount by 1
         this->bulletAmount_ --;  
+    }
+
+    // otherwise throw exception
+    else
+    {
+        throw runtime_error("The enemy is allready dead\n");
     }
 }
 
