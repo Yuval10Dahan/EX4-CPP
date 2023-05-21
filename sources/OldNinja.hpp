@@ -15,11 +15,11 @@ class OldNinja : public Ninja
         // constructor
         OldNinja(std::string name, const Point &location);
 
-        OldNinja(const OldNinja &other) = delete;  // Deleted copy constructor
-        OldNinja& operator=(const OldNinja &other) = delete;  // Deleted copy assignment operator
-        OldNinja(OldNinja &&other) = delete;  // Deleted move constructor
-        OldNinja& operator=(OldNinja &&other) = delete;  // Deleted move assignment operator
+        // OldNinja(const OldNinja &other) = delete;  // Deleted copy constructor
+        // OldNinja& operator=(const OldNinja &other) = delete;  // Deleted copy assignment operator
+        // OldNinja(OldNinja &&other) = delete;  // Deleted move constructor
+        // OldNinja& operator=(OldNinja &&other) = delete;  // Deleted move assignment operator
 
-        // distructor
-        ~OldNinja() override;
+        // // distructor
+        // ~OldNinja() override;
 };

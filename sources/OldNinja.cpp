@@ -16,8 +16,8 @@ OldNinja::OldNinja(string name, const Point &location) : Ninja(name, location)
     setLivePoints(OLD_LIVES);
 }
 
-// distructor
-OldNinja::~OldNinja ()
-{
+// // distructor
+// OldNinja::~OldNinja ()
+// {
 
-}
+// }

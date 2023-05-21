@@ -62,7 +62,7 @@ double Point::distance(const Point &point) const
 }
 
 // this method prints the point object as (x,y)
-void Point::print() const
+void Point::print() 
 {
     cout << "(" << this->xCoordinate_ << "," << this->yCoordinate_ << ")" << endl;
 }

@@ -29,7 +29,7 @@ class Point
 
         // other methods                           
         double distance(const Point &point) const;
-        void print() const;
+        void print();
         static Point moveTowards(const Point &sourceP, const Point &destP, double distance);
         std::string printStr();
 

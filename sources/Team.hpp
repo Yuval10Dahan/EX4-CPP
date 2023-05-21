@@ -27,6 +27,7 @@ class Team
         // getters
         const std::vector<Character*>& getWarriors() const;
         Character* getLeader();
+        // Character& getLeader();
 
         // constructor
         Team(Character *leader);
@@ -34,8 +35,8 @@ class Team
         // setters
         void setLeader(Character* leader);
 
-        Team(const Team &other) = delete;  // Deleted copy constructor
-        Team& operator=(const Team &other) = delete;  // Deleted copy assignment operator
+        Team(const Team &other);  // copy constructor
+        Team& operator=(const Team &other);  // copy assignment operator
         Team(Team &&other) = delete;  // Deleted move constructor
         Team& operator=(Team &&other) = delete;  // Deleted move assignment operator
  
@@ -52,6 +53,6 @@ class Team
         // other methods
         void add(Character *warrior);
         void attack(Team *rivals); 
-        int stillAlive() const;
-        virtual void print() const;
+        int stillAlive();
+        virtual void print();
 };

@@ -9,10 +9,10 @@ using namespace std;
 
 SmartTeam::SmartTeam(Character *leader) : Team(leader) {}
 
-SmartTeam::~SmartTeam()
-{
+// SmartTeam::~SmartTeam()
+// {
 
-}
+// }
 
 void SmartTeam::replaceLeader() 
 {
@@ -29,7 +29,7 @@ void SmartTeam::attackVictim(Character *victim, Team *rivals)
 
 }
 
-void SmartTeam::print() const
+void SmartTeam::print() 
 {
 
 }

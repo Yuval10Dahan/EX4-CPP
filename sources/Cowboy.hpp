@@ -12,8 +12,6 @@ class Cowboy : public Character
 {
     private:
         int bulletAmount_;
-        int livePoints_;
- 
 
 
     public:
@@ -21,17 +19,16 @@ class Cowboy : public Character
         // constructor
         Cowboy(std::string name, const Point &location);
 
-        Cowboy(const Cowboy &other) = delete;  // Deleted copy constructor
-        Cowboy& operator=(const Cowboy &other) = delete;  // Deleted copy assignment operator
-        Cowboy(Cowboy &&other) = delete;  // Deleted move constructor
-        Cowboy& operator=(Cowboy &&other) = delete;  // Deleted move assignment operator
+        // Cowboy(const Cowboy &other) = delete;  // Deleted copy constructor
+        // Cowboy& operator=(const Cowboy &other) = delete;  // Deleted copy assignment operator
+        // Cowboy(Cowboy &&other) = delete;  // Deleted move constructor
+        // Cowboy& operator=(Cowboy &&other) = delete;  // Deleted move assignment operator
 
-        // distructor
-        ~Cowboy() override;
+        // // distructor
+        // ~Cowboy() override;
 
         // getters
         int getBulletAmount() const;
-        int getLivePoints() const;
         
         // other methods
         void shoot(Character *enemy);

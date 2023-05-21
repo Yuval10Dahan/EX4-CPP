@@ -13,16 +13,17 @@ using namespace std;
 
 // constructor
 Cowboy::Cowboy(string name, const Point &location) : Character(name, location),
- bulletAmount_(BULLET_AMOUNT), livePoints_(C_LIVES) 
+ bulletAmount_(BULLET_AMOUNT)
 {
+    setLivePoints(C_LIVES);
     setCharacterType('C');
 }
 
-// distructor
-Cowboy::~Cowboy() 
-{
+// // distructor
+// Cowboy::~Cowboy() 
+// {
 
-}
+// }
  
 // ### getters ###
 
@@ -30,12 +31,6 @@ Cowboy::~Cowboy()
 int Cowboy::getBulletAmount() const 
 {
     return this->bulletAmount_;
-}
-
-// getter method for the "livePoints" data member
-int Cowboy::getLivePoints() const 
-{
-    return this->getLivePoints();
 }
 
 // this method shoot the enemy

@@ -9,7 +9,36 @@ using namespace std;
 
 
 // constructor
-Character::Character(string name, const Point &location) : name_(name), location_(location) {}
+Character::Character(string name, const Point &location) : name_(name), location_(location),
+isInAGroup_(false) {}
+
+// copy constructor
+Character::Character(const Character &other)
+{
+    // copy the data members
+    this->name_ = other.getName();
+    this->location_ = other.getLocation();
+    this->isInAGroup_ = other.getIsInAGroup();
+}
+
+Character& Character::operator=(const Character &other)
+{
+    // in case that other is actually this
+    if (this == &other) 
+    {
+        return *this;
+    }
+
+    // copy the data members otherwise
+    this->name_ = other.getName();
+    this->location_ = other.getLocation();
+    this->isInAGroup_ = other.getIsInAGroup();
+
+    // return the object after the changes
+    return *this;
+}
+
+
 
 // --------------------------
 // ### getters ###
@@ -84,7 +113,7 @@ bool Character::isAlive() const
 }
 
 // this method calculate the distnace between the 2 characters
-double Character::distance(Character *other) const
+double Character::distance(const Character *other) const
 {
     // distance between the points of the characters
     double distance = this->location_.distance(other->getLocation());
@@ -109,7 +138,7 @@ void Character::hit(int number)
 }
 
 // this method print the Character attributes as a string
-std::string Character::print() const
+std::string Character::print()
 {
     string characterPrint = "";
     string name = this->getName();

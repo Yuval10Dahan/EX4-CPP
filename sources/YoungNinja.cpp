@@ -16,8 +16,8 @@ YoungNinja::YoungNinja(string name, const Point &location) : Ninja(name, locatio
     setLivePoints(YOUNG_LIVES);
 }
 
-// distructor
-YoungNinja::~YoungNinja ()
-{
+// // distructor
+// YoungNinja::~YoungNinja ()
+// {
 
-}
+// }

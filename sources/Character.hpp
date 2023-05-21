@@ -13,7 +13,7 @@ class Character
         Point location_;
         int livePoints_;
         char characterType_;
-        bool isInAGroup_ = false;
+        bool isInAGroup_;
 
 
     public:
@@ -29,12 +29,13 @@ class Character
         void setLivePoints(int points);
         void setCharacterType(char type);
         void setIsInAGroup(bool is);
+        // void setLocation(Point &location);
 
         // constructor
         Character(std::string name, const Point &location);
 
-        Character(const Character &other) = delete;  // Deleted copy constructor
-        Character& operator=(const Character &other) = delete;  // Deleted copy assignment operator
+        Character(const Character &other);  // copy constructor
+        Character& operator=(const Character &other);  // copy assignment operator
         Character(Character &&other) = delete;  // Deleted move constructor
         Character& operator=(Character &&other) = delete;  // Deleted move assignment operator
 
@@ -43,8 +44,8 @@ class Character
 
         // other methods
         bool isAlive() const;
-        double distance(Character *other) const;
+        double distance(const Character *other) const;
         void hit(int number);
-        std::string print() const;
+        std::string print();
         void advance(Point &next);
 };

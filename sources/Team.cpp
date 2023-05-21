@@ -19,10 +19,10 @@ Team::Team(Character *leader) : leader_(leader)
     this->add(leader);
 }
 
-Team::~Team()
-{
+// Team::~Team()
+// {
 
-}
+// }
 
 
 // -----------------
@@ -91,7 +91,7 @@ void Team::attack(Team *rivals)
 }
 
 // this method returns the number of team warriors that is still alive
-int Team::stillAlive() const
+int Team::stillAlive() 
 {
     int livingWarriors = 0;
  
@@ -109,7 +109,7 @@ int Team::stillAlive() const
 
 // this method prints the warriors details
 // first the cowboys, after that the ninjas
-void Team::print() const
+void Team::print() 
 {
     // first go through all the Cowboys
     for(Character *cowboy : warriors_)

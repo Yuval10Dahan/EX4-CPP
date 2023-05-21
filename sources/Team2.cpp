@@ -12,10 +12,10 @@ Team2::Team2(Character *leader) : Team(leader)
     
 }
 
-Team2::~Team2()
-{
+// Team2::~Team2()
+// {
 
-}
+// }
 
 
 
@@ -165,7 +165,7 @@ void Team2::attackVictim(Character *victim, Team *rivals)
 
 // this method prints the warriors details
 // according to the order of adding the characters
-void Team2::print() const
+void Team2::print() 
 {
     for(Character *warrior : this->getWarriors())
     {

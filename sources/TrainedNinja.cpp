@@ -16,8 +16,8 @@ TrainedNinja::TrainedNinja(string name, const Point &location) : Ninja(name, loc
     setLivePoints(TRAINED_LIVES);
 }
 
-// distructor
-TrainedNinja::~TrainedNinja ()
-{
+// // distructor
+// TrainedNinja::~TrainedNinja ()
+// {
 
-}
+// }
