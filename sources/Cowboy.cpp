@@ -12,7 +12,7 @@ using namespace std;
 
 
 // constructor
-Cowboy::Cowboy(std::string name, const Point &location) : Character(name, location),
+Cowboy::Cowboy(string name, const Point &location) : Character(name, location),
  bulletAmount_(BULLET_AMOUNT), livePoints_(C_LIVES) 
 {
     setCharacterType('C');

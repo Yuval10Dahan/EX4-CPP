@@ -10,7 +10,7 @@ using namespace std;
 
 
 // constructor
-Ninja::Ninja(std::string name, const Point &location) : Character(name, location) 
+Ninja::Ninja(string name, const Point &location) : Character(name, location) 
 {
     setCharacterType('N');
 }

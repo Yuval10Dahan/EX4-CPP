@@ -7,7 +7,10 @@
 using namespace std;
 
 
-Team2::Team2(Character *leader) : Team(leader) {}
+Team2::Team2(Character *leader) : Team(leader) 
+{
+    
+}
 
 Team2::~Team2()
 {
