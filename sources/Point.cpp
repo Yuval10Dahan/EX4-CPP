@@ -24,7 +24,7 @@ double Point::getX() const
 }
 
 // getter method for the "y" data member
-double Point::gety() const
+double Point::getY() const
 {
     return this->yCoordinate_;
 }
@@ -49,7 +49,7 @@ double Point::distance(const Point &point) const
     double x1 = this->xCoordinate_;
     double x2 = point.getX();
     double y1 = this->yCoordinate_;
-    double y2 = point.gety();
+    double y2 = point.getY();
 
     // pow
     double diff1 = pow( (x1 - x2), 2 );
@@ -57,7 +57,7 @@ double Point::distance(const Point &point) const
 
     // sqrt
     double distance = sqrt(diff1 + diff2);
-
+    
     return distance;
 }
 
@@ -74,8 +74,8 @@ Point Point::moveTowards(const Point &sourceP, const Point &destP, double distan
     if(distance < 0) throw invalid_argument("Distance can't be negative\n");
 
     // differences between the points coordinates
-    double diff1 = sourceP.getX() - destP.getX();
-    double diff2 = sourceP.gety() - destP.gety();
+    double diff1 = destP.getX() - sourceP.getX();
+    double diff2 = destP.getY() - sourceP.getY();
 
     // distance between the points
     double currDistance = sourceP.distance(destP);
@@ -91,7 +91,7 @@ Point Point::moveTowards(const Point &sourceP, const Point &destP, double distan
     
     // calculate the coordinates of the nearest possible point to advance
     double newX = sourceP.getX() + ratio * diff1;
-    double newY = sourceP.gety() + ratio * diff2;
+    double newY = sourceP.getY() + ratio * diff2;
 
     // return the desired point
     return Point(newX, newY);
@@ -111,7 +111,7 @@ bool Point::operator==(const Point &other) const
     double x1 = this->xCoordinate_;
     double x2 = other.getX();
     double y1 = this->yCoordinate_;
-    double y2 = other.gety();
+    double y2 = other.getY();
 
     // if the x and the y of both the points is equal return true
     return ( ( x1 == x2 ) && ( y1 == y2 ) );

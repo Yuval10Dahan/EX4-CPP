@@ -1,41 +1,41 @@
-// #include "Character.hpp"
-// #include "Team.hpp"
-// #include "Point.hpp"
-// #include <string>
-// #include <vector>
+#include "Character.hpp"
+#include "Team.hpp"
+#include "Point.hpp"
+#include <string>
+#include <vector>
 
-// using namespace std;
+using namespace std;
 
 
-// // test
-// int main()
-// {
-//     cout << "#############################################################" << endl;
+// test
+int main()
+{
+    cout << "#############################################################" << endl;
 
-//     // vector<int> vec(10);
+    // vector<int> vec(10);
 
-//     cout << "#############################################################" << endl;
+    cout << "#############################################################" << endl;
     
-//     Point a(6,2);
-//     Point b(0,0);
-//     // a.print();
+    Point a(6,2);
+    Point b(0,0);
+    // a.print();
 
-//     cout << "#############################################################" << endl;
+    cout << "#############################################################" << endl;
 
-//     // Cowboy *c = new Cowboy("yuval", a);
-//     // Cowboy *c2 = new Cowboy("cow", b);
-//     // cout << c->print() << endl;
-//     // int lp = c->getLivePoints();
-//     // cout << lp << endl;
-//     // cout << c->isAlive() << endl;
-//     // cout << c->distance(c2) << endl;
-//     // c->hit(3);
+    // Cowboy *c = new Cowboy("yuval", a);
+    // Cowboy *c2 = new Cowboy("cow", b);
+    // cout << c->print() << endl;
+    // int lp = c->getLivePoints();
+    // cout << lp << endl;
+    // cout << c->isAlive() << endl;
+    // cout << c->distance(c2) << endl;
+    // c->hit(3);
 
-//     cout << "#############################################################" << endl;
+    cout << "#############################################################" << endl;
 
-//     Cowboy *tom = new Cowboy("Tom", a);
-//     OldNinja *sushi = new OldNinja("sushi", b);
+    Cowboy *tom = new Cowboy("Tom", a);
+    OldNinja *sushi = new OldNinja("sushi", b);
 
-//     Team team_A(nullptr);
+    Team team_A(nullptr);
     
-// }
+}

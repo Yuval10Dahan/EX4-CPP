@@ -21,7 +21,7 @@ class Point
 
         // getters
         double getX() const;
-        double gety() const;
+        double getY() const;
 
         // setters
         void setX(double xCoordinate);
