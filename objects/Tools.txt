@@ -1,1 +1,24 @@
-gdgdgdg
+StudentTest1.cpp:500:
+TEST SUITE: Battle simulations
+TEST CASE:  The closest teammate to the captain is appointed as captain
+
+StudentTest1.cpp:500: ERROR: test case THREW exception: The Cowboy can't shoot himself
+
+
+===============================================================================
+StudentTest1.cpp:628:
+TEST SUITE: Battle simulations
+TEST CASE:  Run full battles using random_char to ensure full functionality
+  Team vs Team2
+
+StudentTest1.cpp:628: ERROR: test case THREW exception: exception thrown in subcase - will translate later when the whole test case has been exited (cannot translate while there is an active exception)
+
+===============================================================================
+StudentTest1.cpp:628:
+TEST SUITE: Battle simulations
+TEST CASE:  Run full battles using random_char to ensure full functionality
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Team vs Team2
+
+StudentTest1.cpp:628: ERROR: test case THREW exception: The Ninja can't slash himself
