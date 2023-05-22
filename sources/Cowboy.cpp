@@ -45,7 +45,7 @@ void Cowboy::shoot(Character *enemy)
     if(this == enemy)
     {
         throw runtime_error("The Cowboy can't shoot himself\n");
-    }
+    } 
 
     // if the attacking cowboy is dead - throw exception
     if(this->isAlive() == false)
