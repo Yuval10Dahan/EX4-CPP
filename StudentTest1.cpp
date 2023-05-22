@@ -184,7 +184,7 @@ TEST_SUITE("Classes initialization tests and Team modification( add(),stillAlive
         Team team2{captain2};
         CHECK_THROWS_AS(Team{captain2},std::runtime_error);
         CHECK_THROWS_AS(Team2{captain2},std::runtime_error);
-    } 
+    }
 
     TEST_CASE("Adding the same character to different teams") {
         auto captain1 = create_tninja();
@@ -217,7 +217,7 @@ TEST_SUITE("Battle related methods") {
 
         auto shoot = [&](int times) {
             for (int i = 0; i < times; i++) {
-                cowboy->shoot(target); 
+                cowboy->shoot(target);
             }
         };
 
@@ -467,61 +467,27 @@ TEST_SUITE("Battle simulations") {
 
         CHECK_EQ(team2.stillAlive(), 7);
 
-        cout << "1" << endl;
-
         multi_attack(2, team, team2);
-
-        cout << "2" << endl;
-
         CHECK_FALSE(young_ninja->isAlive()); // Young ninja should be dead
-
-        cout << "3" << endl;
-
         CHECK((trained_ninja->isAlive() && old_ninja->isAlive() &&
                young_ninja2->isAlive())); // Everyone else should still be alive
-
-
-        cout << "4" << endl;
-
 
         team.attack(&team2);
         CHECK((!trained_ninja->isAlive() && old_ninja->isAlive() &&
                young_ninja2->isAlive())); // No one should die in the attack
 
-
-        cout << "5" << endl;
-
-
         multi_attack(2, team, team2);
         CHECK_FALSE(trained_ninja->isAlive()); // Trained ninja should be dead
         CHECK((!old_ninja->isAlive() && young_ninja2->isAlive()));
-
-
-        cout << "6" << endl;
-
 
         multi_attack(4, team, team2);
         CHECK_FALSE(old_ninja->isAlive()); // Old ninja should be dead
         CHECK(!young_ninja2->isAlive());
 
-
-        cout << "7" << endl;
-
-
         multi_attack(2, team, team2);
         CHECK_NOTHROW(team.attack(
                 &team2)); // The entire enemy team will be dead before every cowboy shoots, the attack should stop and not throw an exception
-
-        cout << "8" << endl;
-
-
         CHECK_FALSE(young_ninja2->isAlive()); // Young ninja should be dead
-
-
-        cout << "9" << endl;
-
-
-        
         CHECK_THROWS_AS(team.attack(&team2), std::runtime_error); // Attacking a dead team should throw an exception
     }
 
