@@ -43,7 +43,12 @@ void Ninja::setSpeed(int speed)
 void Ninja::move(const Character *enemy)
 {
     // if the distance to the enemy is bigger than the ninja speed - advance
-    if( (enemy != nullptr) && (this->distance(enemy) >= this->getSpeed()) && (this->isAlive()) )
+    if( (enemy == nullptr) || (this->isAlive() == false) )
+    {
+        throw runtime_error("This ninja can't move\n");
+    }
+
+    else 
     {
         // the most advanced point to the enemy
         Point moveTo = Point::moveTowards(this->getLocation(), enemy->getLocation(), this->getSpeed());
@@ -51,16 +56,17 @@ void Ninja::move(const Character *enemy)
         // the ninja advance to the enemy
         this->advance(moveTo);
     }
-
-    else 
-    {
-        throw runtime_error("This ninja can't move\n");
-    }
 }
 
 // this method slash the enemy
 void Ninja::slash(Character *enemy)
 {
+    // enemy is null
+    if(enemy == nullptr)
+    {
+        throw invalid_argument("The given enemy is nullptr\n");
+    }
+
     // in case the enemy is the attacking ninja itself
     if(this == enemy)
     {

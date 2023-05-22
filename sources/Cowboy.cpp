@@ -35,6 +35,12 @@ int Cowboy::getBulletAmount() const
 // this method shoot the enemy
 void Cowboy::shoot(Character *enemy)
 {   
+    // enemy is null
+    if(enemy == nullptr)
+    {
+        throw invalid_argument("The given enemy is nullptr\n");
+    }
+
     // in case the enemy is the attacking cowboy itself
     if(this == enemy)
     {
