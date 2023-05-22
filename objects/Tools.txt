@@ -1,93 +1,63 @@
-TEST_SUITE("Battle simulations") {
+StudentTest1.cpp:444:
+TEST SUITE: Battle simulations
+TEST CASE:  Characters attack the closest enemy to the captain and ignore dead enemies 
 
-    auto multi_attack = [](int n, Team &attacker, Team &defender) {
-        for (int i = 0; i < n; i++) {
-            if (defender.stillAlive()) {
-                attacker.attack(&defender);
-            }
-        }
-    };
-
-    TEST_CASE("Characters attack the closest enemy to the captain and ignore dead enemies ") {
-        Team team{create_cowboy(-1, -1)};
-        team.add(create_yninja(0, 0));
-        team.add(create_oninja(-0.5, -0.5));
-        team.add(create_tninja(0.5, 0.5));
-        team.add(create_cowboy());
-
-        CHECK_EQ(team.stillAlive(), 5);
-
-        auto young_ninja = create_yninja(0, 0);
-        auto trained_ninja = create_tninja(1, 1);
-        auto old_ninja = create_oninja(2, 2);
-        auto young_ninja2 = create_yninja(3, 3);
-        auto cowboy = create_cowboy(-6, -6);
-	auto cowboy2 = create_cowboy(-7, -7);
-	auto cowboy3 = create_cowboy(-8, -8);
-        Team team2{young_ninja};
-        team2.add(trained_ninja);
-        team2.add(old_ninja);
-        team2.add(young_ninja2);
-        team2.add(cowboy);
-	team2.add(cowboy2);
-	team2.add(cowboy3);
-
-        CHECK_EQ(team2.stillAlive(), 7);
-
-        cout << "1" << endl;
-
-        multi_attack(2, team, team2);
-
-        cout << "2" << endl;
-
-        CHECK_FALSE(young_ninja->isAlive()); // Young ninja should be dead
-
-        cout << "3" << endl;
-
-        CHECK((trained_ninja->isAlive() && old_ninja->isAlive() &&
-               young_ninja2->isAlive())); // Everyone else should still be alive
+StudentTest1.cpp:444: ERROR: test case THREW exception: The Ninja can't slash himself
 
 
-        cout << "4" << endl;
+===============================================================================
+StudentTest1.cpp:534:
+TEST SUITE: Battle simulations
+TEST CASE:  The closest teammate to the captain is appointed as captain
+
+StudentTest1.cpp:534: ERROR: test case THREW exception: The Cowboy can't shoot himself
 
 
-        team.attack(&team2);
-        CHECK((!trained_ninja->isAlive() && old_ninja->isAlive() &&
-               young_ninja2->isAlive())); // No one should die in the attack
+===============================================================================
+StudentTest1.cpp:582:
+TEST SUITE: Battle simulations
+TEST CASE:  If several enemies are equidistant from the captain, only a single enemy should still be targeted.
+
+StudentTest1.cpp:601: ERROR: CHECK_EQ( team2.stillAlive(), 3 ) is NOT correct!
+  values: CHECK_EQ( 4, 3 )
+
+StudentTest1.cpp:605: ERROR: CHECK_EQ( team2.stillAlive(), 2 ) is NOT correct!
+  values: CHECK_EQ( 4, 2 )
+
+StudentTest1.cpp:609: ERROR: CHECK_EQ( team2.stillAlive(), 1 ) is NOT correct!
+  values: CHECK_EQ( 4, 1 )
+
+StudentTest1.cpp:613: ERROR: CHECK_EQ( team2.stillAlive(), 0 ) is NOT correct!
+  values: CHECK_EQ( 4, 0 )
+
+===============================================================================
+StudentTest1.cpp:618:
+TEST SUITE: Battle simulations
+TEST CASE:  When the captain moves, a different enemy should be targeted
+
+StudentTest1.cpp:618: ERROR: test case THREW exception: The Ninja can't slash himself
 
 
-        cout << "5" << endl;
+===============================================================================
+StudentTest1.cpp:662:
+TEST SUITE: Battle simulations
+TEST CASE:  Run full battles using random_char to ensure full functionality
+  Team vs Team
+
+StudentTest1.cpp:662: ERROR: test case THREW exception: exception thrown in subcase - will translate later when the whole test case has been exited (cannot translate while there is an active exception)
+
+===============================================================================
+StudentTest1.cpp:662:
+TEST SUITE: Battle simulations
+TEST CASE:  Run full battles using random_char to ensure full functionality
+
+DEEPEST SUBCASE STACK REACHED (DIFFERENT FROM THE CURRENT ONE):
+  Team vs Team
+
+StudentTest1.cpp:662: ERROR: test case THREW exception: The Ninja can't slash himself
 
 
-        multi_attack(2, team, team2);
-        CHECK_FALSE(trained_ninja->isAlive()); // Trained ninja should be dead
-        CHECK((!old_ninja->isAlive() && young_ninja2->isAlive()));
-
-
-        cout << "6" << endl;
-
-
-        multi_attack(4, team, team2);
-        CHECK_FALSE(old_ninja->isAlive()); // Old ninja should be dead
-        CHECK(!young_ninja2->isAlive());
-
-
-        cout << "7" << endl;
-
-
-        multi_attack(2, team, team2);
-        CHECK_NOTHROW(team.attack(
-                &team2)); // The entire enemy team will be dead before every cowboy shoots, the attack should stop and not throw an exception
-
-        cout << "8" << endl;
-
-
-        CHECK_FALSE(young_ninja2->isAlive()); // Young ninja should be dead
-
-
-        cout << "9" << endl;
-
-
-        
-        CHECK_THROWS_AS(team.attack(&team2), std::runtime_error); // Attacking a dead team should throw an exception
-    }
+===============================================================================
+[doctest] test cases:  24 |  19 passed | 5 failed | 0 skipped
+[doctest] assertions: 132 | 128 passed | 4 failed |
+[doctest] Status: FAILURE!
