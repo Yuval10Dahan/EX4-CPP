@@ -136,7 +136,7 @@ void Team::print()
 }
 
 // this method replace the team leader in case he is dead
-void Team::replaceLeader()
+void Team::replaceLeader() 
 {
     // in case the team leader is dead and the team has living warriors
     if( (this->leader_->isAlive() == false) && (this->stillAlive() > 0) )
@@ -206,7 +206,7 @@ Character* Team::findVictim(Team *rivals)
         }
 
         // now go through all the Ninjas
-        for(Character *ninja : warriors_)
+        for(Character *ninja : rivals->getWarriors())
         {
             if(ninja->getCharacterType() == 'N')
             {

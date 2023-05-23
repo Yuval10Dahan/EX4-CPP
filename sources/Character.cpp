@@ -124,6 +124,7 @@ void Character::hit(int number)
     {
         throw invalid_argument("The hit number can't be negative number\n");
     }
+    
     // reduce of the livePoints is valid
     if(this->livePoints_ >= number)
     {

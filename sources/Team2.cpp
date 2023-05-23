@@ -52,7 +52,7 @@ Character* Team2::findVictim(Team *rivals)
         Character *currentVictim;
 
         // go through all the Warriors
-        for(Character *warrior : this->getWarriors())
+        for(Character *warrior : rivals->getWarriors())
         {
             // find the closest living warrior from the rival team to
             // the attacking leader and set him as the current victim
