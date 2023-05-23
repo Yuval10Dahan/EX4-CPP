@@ -20,4 +20,11 @@ class SmartTeam : public Team
         Character* findVictim(Team *rivals) override;
         void attackVictim(Character *victim, Team *rivals) override;
         void print() override;
+
+        // other methods
+        Character* enemyWithLessLivePoints(Team *rivals);
+        Cowboy* furthestCowboy(Team *rivals);
+        bool isThereCowboys(Team *team);
+        Cowboy* nearestCowboy(Team *rivals);
+        Character* regularFindVictim(Team *rivals);
 };    

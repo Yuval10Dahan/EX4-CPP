@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon May 22 17:56:12 2023
+# Make data base, printed on Tue May 23 22:21:34 2023
 
 # Variables
 
@@ -93,7 +93,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 5863
+VSCODE_PID = 17809
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -183,7 +183,7 @@ TIDY = clang-tidy-14
 # environment
 MANAGERPID = 1326
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 5863
+GIO_LAUNCHED_DESKTOP_FILE_PID = 17809
 # environment
 _ = /usr/share/code/code
 # environment
@@ -237,10 +237,10 @@ GDMSESSION = ubuntu
 
 # Directories
 
-# . (device 2051, inode 795859): 13 files, no impossibilities.
+# . (device 2051, inode 795859): 16 files, no impossibilities.
 # sources (device 2051, inode 797311): 24 files, no impossibilities.
 
-# 37 files, no impossibilities in 2 directories.
+# 40 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -411,9 +411,9 @@ objects/myTest.o:
 # strcache buffers: 1 (0) / strings = 74 / storage = 941 B / avg = 12 B
 # current buf: size = 8162 B / used = 941 B / count = 74 / avg = 12 B
 
-# strcache performance: lookups = 110 / hit rate = 32%
+# strcache performance: lookups = 113 / hit rate = 34%
 # hash-table stats:
-# Load=74/8192=1%, Rehash=0, Collisions=0/110=0%
-# Finished Make data base on Mon May 22 17:56:12 2023
+# Load=74/8192=1%, Rehash=0, Collisions=0/113=0%
+# Finished Make data base on Tue May 23 22:21:34 2023
 
  
