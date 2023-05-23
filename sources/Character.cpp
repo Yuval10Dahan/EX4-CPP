@@ -149,14 +149,14 @@ std::string Character::print()
     // if the character is alive print all
     if(this->isAlive())
     {
-        characterPrint = "Name: (" + to_string(type) + ") " + name + ", " + "Live points: " + to_string(livePoints) + ", " +
+        characterPrint = "Name: (" + string(1, type) + ") " + name + ", " + "Live points: " + to_string(livePoints) + ", " +
         "Location: " + this->getLocation().printStr() + "\n";
     }
 
     // if the character id dead, remove the "livePoints"
     else
     {
-        characterPrint = "Name: (" + to_string(type) + ") " + ", " + "Location: " + this->getLocation().printStr() + "\n";
+        characterPrint = "Name: (" + string(1, type) + ") " + "(" + this->name_ + "), " + "Location: " + this->getLocation().printStr() + "\n";
     }
     
     return characterPrint;
