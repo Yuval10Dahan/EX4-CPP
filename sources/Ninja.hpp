@@ -15,14 +15,14 @@ class Ninja : public Character
 
     public:
     
+        // constructor
+        Ninja(std::string name, const Point &location);
+
         // getters
         int getSpeed() const;
 
         // setters
         void setSpeed(int speed);
-
-        // constructor
-        Ninja(std::string name, const Point &location);
         
         // other methods
         void move(const Character *enemy);

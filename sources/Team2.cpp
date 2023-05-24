@@ -153,8 +153,8 @@ void Team2::attackVictim(Character *victim, Team *rivals)
 
     // attacking is not possible
     else
-    {
-        return;
+    { 
+        throw runtime_error("Can't attack a dead team\n");
     }
 }
 

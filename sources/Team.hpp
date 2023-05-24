@@ -22,12 +22,12 @@ class Team
 
     public:
 
+        // constructor
+        Team(Character *leader);
+
         // getters
         const std::vector<Character*>& getWarriors() const;
         Character* getLeader();
-
-        // constructor
-        Team(Character *leader);
 
         // setters
         void setLeader(Character* leader);
@@ -44,6 +44,7 @@ class Team
         virtual void replaceLeader();
         virtual Character* findVictim(Team *rivals);
         virtual void attackVictim(Character *victim, Team *rivals);
+        virtual void print();
         
         // other methods
         void cowboyAttack(Cowboy *cowboy, Character *victim);
@@ -51,5 +52,4 @@ class Team
         void add(Character *warrior);
         void attack(Team *rivals); 
         int stillAlive();
-        virtual void print();
 };

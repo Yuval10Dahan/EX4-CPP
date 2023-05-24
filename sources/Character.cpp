@@ -94,9 +94,9 @@ void Character::setCharacterType(char type)
 }
 
 // setter method for the "IsInAGroup" data member
-void Character::setIsInAGroup(bool is)
+void Character::setIsInAGroup(bool isIn)
 {
-    this->isInAGroup_ = is;
+    this->isInAGroup_ = isIn;
 }
  
 

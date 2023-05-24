@@ -28,7 +28,7 @@ class Character
         // setters
         void setLivePoints(int points);
         void setCharacterType(char type);
-        void setIsInAGroup(bool is);
+        void setIsInAGroup(bool isIn);
 
         // constructor
         Character(std::string name, const Point &location);
